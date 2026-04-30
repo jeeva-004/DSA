@@ -1,8 +1,8 @@
-class CircularLinkedList<T> {
+class CircularSinglyLinkedList<T> {
     int size;
     Node last;
 
-    CircularLinkedList() {
+    CircularSinglyLinkedList() {
         size = 0;
         last = null;
     }
@@ -195,7 +195,7 @@ class CircularLinkedList<T> {
 
 public class Main {
     public static void main(String[] args) {
-        CircularLinkedList<Integer> list = new CircularLinkedList<>();
+        CircularSinglyLinkedList<Integer> list = new CircularSinglyLinkedList<>();
         list.addAtEnd(1);
         list.addAtEnd(2);
         list.addAtEnd(3);
