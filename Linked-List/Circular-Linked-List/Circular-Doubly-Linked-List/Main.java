@@ -232,16 +232,3 @@ class Main {
         list.displayBackward();
     }
 }
-
-/*
- * addatend *
- * insertatbegining *
- * display forward, backward *
- * deleteatbegining *
- * deleteatend *
- * insertatafterelement *
- * deleteataftelement *
- * deletebyvalue *
- * containsvalue
- * length
- */
