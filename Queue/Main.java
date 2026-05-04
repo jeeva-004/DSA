@@ -1,30 +1,34 @@
 class Queue<T> {
     final int Maxsize = 30;
     T arr[];
-    int foq, index;
+    int index;
 
     Queue() {
         arr = (T[]) new Object[Maxsize];
-        foq = 0; 
         index = -1;
     }
 
     public void enQueue(T val) {
-        if (foq > Maxsize - 1)
+        if (index > Maxsize - 1)
             throw new IndexOutOfBoundsException("Queue is overflow");
         arr[++index] = val;
     }
 
     public T peek() {
-        if (foq == -1)
+        if (index <0)
             throw new IndexOutOfBoundsException("Queue is underflow");
-        return arr[foq];
+        return arr[0];
     }
     
     public T deQueue(){
         if(index<0)
             throw new IndexOutOfBoundsException("Queue is underflow");
-        return arr[foq++];
+        T val = arr[0];
+        for(int i = 0; i<index; i++){
+            arr[i] = arr[i+1];
+        }
+        index--;
+        return val;
     }
 }
 
@@ -37,6 +41,11 @@ public class Main {
         System.out.println(data.peek());
         data.deQueue();
         System.out.println(data.peek());
+        data.deQueue();
+        
+        System.out.println(data.peek());
+        data.deQueue();
+        data.enQueue(5);   
         System.out.println(data.peek());
 
     }
