@@ -1,12 +1,12 @@
+import java.util.*;
 class Main {
-
     // Time Complexity O(n2);
 
     static void sortAccending(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int temp = arr[i], minIndex = i;
-            for (int j = i+1; j < arr.length; j++)
-                if (arr[j] <arr[minIndex])
+            for (int j = i + 1; j < arr.length; j++)
+                if (arr[j] < arr[minIndex])
                     minIndex = j;
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;
@@ -14,9 +14,9 @@ class Main {
     }
 
     static void sortDeccending(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
+         for (int i = 0; i < arr.length; i++) {
             int temp = arr[i], maxIndex = i;
-            for (int j = i+1; j < arr.length; j++)
+            for (int j = i + 1; j < arr.length; j++)
                 if (arr[j] > arr[maxIndex])
                     maxIndex = j;
             arr[i] = arr[maxIndex];
@@ -25,10 +25,9 @@ class Main {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 4,6,4,7,6,6,1, 2, 5 };
-        sortAccending(arr);
-        for (int num : arr)
-            System.out.print(num + " ");
+        int[] arr = { 1, 2, 4, 4, 5, 6, 6, 6, 7 };
+        sortDeccending(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 }
