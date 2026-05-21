@@ -128,11 +128,11 @@ class LinkedList<T> implements Iterable<T>{
         if (Head == null) {
             throw new IndexOutOfBoundsException("Index not found");
         }
-        Node previous;
+        // Node previous;
         Node temp = Head;
         if (size > 0) {
             for (int i = 0; i < size - 1; i++) {
-                previous = temp;
+                // previous = temp;
                 temp = temp.next;
             }
             temp.next = null;

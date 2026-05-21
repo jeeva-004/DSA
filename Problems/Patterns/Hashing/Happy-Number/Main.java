@@ -1,27 +1,29 @@
+import java.util.*;
+
 class Main {
     static boolean isHappy(int n) {
-        boolean isHappy = true;
-        while (isHappy) {
+        HashSet<Integer> set = new HashSet<>();
+        while (true) {
             String str = n + "";
             char[] charArr = str.toCharArray();
-
             int val = 0;
 
-            for (char c : charArr) {
-                int value = Character.getNumericValue(c);
+            for (char ch : charArr) {
+                int value = Character.getNumericValue(ch);
                 val += value * value;
-                n = val;
             }
-            if(n==1)
-                isHappy = false;
+            if (val == 1)
+                return true;
+            if (set.contains(val))
+                break;
+            else
+                set.add(val);
+            n = val;
         }
-        if(n==1)
-            return true;
         return false;
-
     }
 
     public static void main(String[] args) {
-        isHappy(2);
+        System.out.println(isHappy(19));
     }
 }

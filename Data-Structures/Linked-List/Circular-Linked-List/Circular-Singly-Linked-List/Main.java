@@ -104,18 +104,13 @@ class CircularSinglyLinkedList<T> {
             temp = temp.next;
         } while (temp != last.next);
         if (isHere) {
-            if (val == last.data || size == 1) {
-                addAtEnd(val);
-                size++;
-            } else if (val == last.next.data) {
-                newNode.next = last.next.next;
-                last.next.next = newNode;
-                size++;
-            } else {
-                newNode.next = temp.next;
-                temp.next = newNode;
-                size++;
+            if (beforeElement == last.next.data) {
+                insertAtBegining(val);
+                return;
             }
+            newNode.next = temp.next;
+            temp.next = newNode;
+            size++;
         }
 
         else
@@ -153,7 +148,7 @@ class CircularSinglyLinkedList<T> {
     }
 
     public T deleteElementByValue(T val) {
-        if(size==0){
+        if (size == 0) {
             throw new IndexOutOfBoundsException("deletion attempted on empty method");
         }
         Node temp = last.next, prev = null;
@@ -161,34 +156,34 @@ class CircularSinglyLinkedList<T> {
         do {
             prev = temp;
             temp = temp.next;
-            if(temp.data==val){
+            if (temp.data == val) {
                 isHere = true;
                 break;
             }
-        } while (temp!=last.next);
-        if(isHere){
+        } while (temp != last.next);
+        if (isHere) {
             prev.next = temp.next;
             size--;
         }
         return val;
     }
 
-    public boolean containsValue(T val){
-        if(size==0)
+    public boolean containsValue(T val) {
+        if (size == 0)
             throw new IndexOutOfBoundsException("Method attempted on empty list");
         Node temp = last.next;
         boolean isHere = false;
         do {
             temp = temp.next;
-            if(temp.data==val){
+            if (temp.data == val) {
                 isHere = true;
                 break;
             }
-        } while (temp!=last.next);
+        } while (temp != last.next);
         return isHere;
     }
 
-    public int length(){
+    public int length() {
         return size;
     }
 }
@@ -199,7 +194,8 @@ public class Main {
         list.addAtEnd(1);
         list.addAtEnd(2);
         list.addAtEnd(3);
-        System.out.println(list.length());
-        // list.displayElements();
+        list.insertAtAfterElement(1, 4);
+        // System.out.println(list.length());
+        list.displayElements();
     }
 }

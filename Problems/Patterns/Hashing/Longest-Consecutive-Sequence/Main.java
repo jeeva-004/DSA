@@ -4,39 +4,33 @@ class Main {
 
     static int longestConsecutiveSequence(int[] arr) {
         HashSet<Integer> set = new HashSet<>();
-        // ArrayList<Integer> list = new ArrayList<>(set);
+        int consecutiveSequence = 1, temp = 1;
         for (int n : arr)
             set.add(n);
-        int consecutiveSequence = 1, min = Integer.MAX_VALUE;
-        while (set.size() > 0) {
-            // find min
-            for (int num : set)
-                if (min > num)
-                    min = num;
 
-            int tempSequence = 1, tempMin = min + 1;
-            set.remove(min);
-            min = Integer.MAX_VALUE;
-            for (int i = 0; i < arr.length; i++) {
-                if (set.contains(tempMin)) {
-                    tempSequence++;
-                    int temp = tempMin + 1;
-                    set.remove(tempMin);
-                    tempMin = temp;
-                    if (tempSequence > consecutiveSequence)
-                        consecutiveSequence = tempSequence;
-                } else {
-                    tempSequence = 1;
-                    break;
+        for (int num : set) {
+            if (!set.contains(num - 1)) {
+                int val = num + 1;
+                for (int i = 0; i < set.size(); i++) {
+                    if (set.contains(val)) {
+                        val = val + 1;
+                        temp++;
+                        if (consecutiveSequence < temp)
+                            consecutiveSequence = temp;
+                    } else {
+                        temp = 1;
+                        break;
+                    }
                 }
             }
+
         }
 
         return consecutiveSequence;
     }
 
     public static void main(String[] args) {
-        int[] arr = { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 };
+        int[] arr = { 1,0,1,2    };
         System.out.println(longestConsecutiveSequence(arr));
     }
 }

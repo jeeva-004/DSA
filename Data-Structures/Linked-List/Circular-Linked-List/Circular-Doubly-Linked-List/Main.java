@@ -22,7 +22,7 @@ class CircularDoublyLinkedList<T> {
     public void addAtEnd(T val) {
         Node newNode = new Node(val);
         if (size == 0) {
-            newNode.next = newNode;
+            newNode.next = newNode.previous = newNode;
             last = newNode;
             size++;
             return;
