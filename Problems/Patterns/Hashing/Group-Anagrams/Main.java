@@ -1,31 +1,32 @@
 import java.util.*;
 
 class Main {
-    static String[] groupAnagrams(String[] words) { 
+    static String[] groupAnagrams(String[] words) {
         List<List<String>> groupsOfAnagrams = new ArrayList<>();
         List<String> tempList = new ArrayList<>();
-        HashSet<String> set = new HashSet<>();
+        // HashSet<String> set = new HashSet<>();
+        HashMap<Character, Integer> map = new HashMap<>();
+        HashMap<Character, Integer> mapCopy = new HashMap<>();
 
-        for (String s : words)
-            set.add(s);
+        // for (String s : words)
+        // set.add(s);
 
-        for (String w : words) {
+        for (int i = 0; i < words.length; i++) {
             // find frequency of current word
-            // HashMap<Character, Integer> map = new HashMap<>();
-            // for (int i = 0; i < w.length(); i++) {
-            // if (map.containsKey(w.charAt(i)))
-            // map.put(w.charAt(i), map.get(w.charAt(i) + 1));
-            // else
-            // map.put(w.charAt(i), 1);
-            // }
+            for (int j = 0; j < words[i].length(); j++) {
+                if (map.containsKey(words[i].charAt(j)))
+                    map.put(words[i].charAt(j), map.get(words[i].charAt(j)) + 1);
+                else
+                    map.put(words[i].charAt(j), 1);
+            }
 
-            for (int i = 1; i < w.length(); i++) {
-                if (w.charAt(i) < w.charAt(i - 1)) {
-                    char temp = w.charAt(i - 1);
-                    w = w.replace(w.charAt(i - 1), w.charAt(i));
-                    w = w.replace(w.charAt(i), temp);
+            mapCopy = map;
+            for(int k = 0; k<words.length; k++){
+                if(words[i]==words[k])
+                    tempList.add(words[k]);
+                else{
+                    while(mapCopy.containsKey(words[k]))
                 }
-                System.out.println(w);
             }
 
         }

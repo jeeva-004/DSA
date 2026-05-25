@@ -8,22 +8,27 @@ class Main {
         HashMap<Character, Character> forS = new HashMap<>();
         HashMap<Character, Character> forT = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
-            forS.put(s.charAt(i), t.charAt(i));
-            forT.put(t.charAt(i), s.charAt(i));
+            if (forS.containsKey(s.charAt(i))) {
+                if (t.charAt(i) != forS.get(s.charAt(i)))
+                    return false;
+                else
+                    forS.put(s.charAt(i), t.charAt(i));
+            } else if (forT.containsKey(t.charAt(i))) {
+                if (s.charAt(i) != forT.get(t.charAt(i)))
+                    return false;
+                else
+                    forT.put(t.charAt(i), s.charAt(i));
+            } else {
+                forS.put(s.charAt(i), t.charAt(i));
+                forT.put(t.charAt(i), s.charAt(i));
+            }
+
         }
-
-        for(int i = 0; i<t.length(); i++){
-            
-        }
-
-        System.out.println(forS);
-        System.out.println(forT);
-
         return true;
     }
 
     public static void main(String[] args) {
-        String s = "egg", t = "add";
+        String s = "title", t = "paper";
 
         System.out.println(isIsomorphic(s, t));
     }
