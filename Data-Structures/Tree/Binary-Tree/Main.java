@@ -1,17 +1,17 @@
-class Binarytree<T> {
+class Binarytree {
     Node root;
 
     class Node {
-        T data;
+        int key;
         Node r, l;
 
-        Node(T data) {
-            this.data = data;
+        Node(int data) {
+            this.key = data;
             r = l = null;
         }
     }
 
-    Binarytree(T val) {
+    Binarytree(int val) {
         Node newNode = new Node(val);
         this.root = newNode;
     }
@@ -20,60 +20,100 @@ class Binarytree<T> {
         this.root = null;
     }
 
-    public void insertRight(Node root, T val) {
-        Node newNode = new Node(val);
-        root.r = newNode;
-    }
-    public void insertLeft(Node root, T val) {
-        Node newNode = new Node(val);
-        root.l = newNode;
-    }
-
-    // pre order traversal
-
-    public void preOrder(Node root){
-        if(root!=null){
-        System.out.print(root.data+" ");
-        preOrder(root.l);
-        preOrder(root.r);
-        }
-    }
-
-    //In order traversal
-    public void inOrder(Node root){
-        if(root!=null){
+    // In order traversal
+    public void inOrder(Node root) {
+        if (root != null) {
             inOrder(root.l);
-            System.out.print(root.data+" ");
+            System.out.print(root.key + " ");
             inOrder(root.r);
         }
     }
 
-    // Post order traversal
-
-    public void postOrder(Node root){
-        if(root!=null){
-            postOrder(root.l);
-            postOrder(root.r);
-            System.out.print(root.data+" ");
-        }
+    public void insert(int val) {
+        insert(root, val);
     }
 
+    public Node insert(Node r, int val) {
+        if (r == null)
+            return new Node(val);
+        if (r.key > val)
+            r.l = insert(r.l, val);
+        else
+            r.r = insert(r.r, val);
+        return r;
+    }
+
+    public void search(int val){
+        search(root, val);
+    }
+
+    public Node search(Node r, int val){
+        
+        if(r==null || r.key==val)
+            return r;
+
+        if(val<r.key)
+           return search(r.l,val);
+        return search(r.r, val);
+        
+    }
+
+
+    public void remove(int val) {
+        remove(root, val);
+    }
+
+    public Node remove(Node r, int val) {
+        
+        if(search(r, val)==null)
+            throw new IndexOutOfBoundsException("value is not found");
+        else{
+            //find the correct element
+            if(val<r.key)
+                r.l = remove(r.l, val);
+            else if(val>r.key)
+                r.r = remove(r.r,val);
+            else{
+                // if node with any one child 
+                if(r.r==null)
+                    return r.l;
+                else if(r.l==null)
+                    return r.r;
+                r.key = min(r.r);
+                r.r = remove(r.r, r.key);
+            }
+        } 
+ 
+        return r;
+    }
+
+    public int min(Node r){
+        int minValue = r.key;
+        while (r!=null) {
+            minValue = r.key;
+            r = r.l;
+        }    
+    return minValue;
+    }
 
 }
 
 class Main {
     public static void main(String[] args) {
-        Binarytree<Integer> b = new Binarytree<>(3);
+        Binarytree b = new Binarytree(50);
+        b.insert(30);
+        b.insert(40);
+        b.insert(70);
+        b.insert(60);
+        b.insert(20);
+        b.insert(75);
+        b.insert(80);
 
-        b.insertRight(b.root, 4);
-        b.insertLeft(b.root, 2);
-        b.insertRight(b.root.l, 1);
-        b.insertLeft(b.root.r, 5);
-
-        b.preOrder(b.root);
+        b.inOrder(b.root);
+        b.remove(20);
         System.out.println();
         b.inOrder(b.root);
-        System.out.println();
-        b.postOrder(b.root);
-    }
+
+}
+
 }

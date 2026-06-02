@@ -16,7 +16,7 @@ class Main {
     }
 
     public static void main(String[] args) {
-        int[] numbers = { 2, 7, 4, 5, 5 };
+        int[] numbers = { 2,3,4,5};
         System.out.println(Arrays.toString(twoSum(numbers, 9)));
     }
 }
