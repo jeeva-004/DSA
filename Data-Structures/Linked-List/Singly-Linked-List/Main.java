@@ -32,8 +32,6 @@ class LinkedList<T> implements Iterable<T>{
         for (int i = 1; i < size; i++) {
             temp = temp.next;
         }
-
-        newNode.next = null;
         temp.next = newNode;
         size++;
     }
