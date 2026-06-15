@@ -1,5 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
 
 class ListNode {
     Node head;
@@ -37,16 +35,30 @@ class ListNode {
     }
 
     public void display() {
+        if(head==null)
+            return;
         Node temp = head;
 
         for (int i = 1; i <= size; i++) {
-            System.out.print(temp.val + " ");
+            if(temp!=null)
+                System.out.print(temp.val + " ");
             temp = temp.next;
         }
     }
 
     public void removeDuplicatedElements() {
-       
+        if (head == null || head.next == null)
+            return;
+        Node s = head, f = head.next;
+        while(f!=null){
+            if(f.val==s.val){
+                
+            }
+            else{
+                f = f.next;
+
+            }
+        }
     }
 }
 
@@ -55,11 +67,7 @@ public class Main {
         ListNode list = new ListNode();
         list.insert(1);
         list.insert(2);
-        list.insert(3);
-        list.insert(3);
-        list.insert(4);
-        list.insert(4);
-        list.insert(5);
+        list.insert(2);
         list.display();
         list.removeDuplicatedElements();
         list.display();
