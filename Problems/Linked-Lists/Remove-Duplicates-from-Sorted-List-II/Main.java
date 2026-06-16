@@ -1,11 +1,9 @@
 
 class ListNode {
     Node head;
-    int size;
 
     ListNode() {
         head = null;
-        size = 0;
     }
 
     class Node {
@@ -22,7 +20,6 @@ class ListNode {
         Node n = new Node(v);
         if (head == null) {
             head = n;
-            size++;
             return;
         }
         Node temp = head;
@@ -31,33 +28,64 @@ class ListNode {
             temp = temp.next;
 
         temp.next = n;
-        size++;
     }
 
     public void display() {
-        if(head==null)
+        if (head == null)
             return;
         Node temp = head;
 
-        for (int i = 1; i <= size; i++) {
-            if(temp!=null)
-                System.out.print(temp.val + " ");
+        while (temp != null) {
+            System.out.print(temp.val + " ");
             temp = temp.next;
         }
     }
 
+
     public void removeDuplicatedElements() {
         if (head == null || head.next == null)
             return;
-        Node s = head, f = head.next;
-        while(f!=null){
-            if(f.val==s.val){
-                
-            }
-            else{
-                f = f.next;
 
+        if(head!=null&&head.next!=null&&head.val==head.next.val){
+            while(head!=null&&head.next!=null&&head.val==head.next.val){
+                head = head.next;
             }
+            head = head.next;
+        }
+
+        Node s = head, f = head;
+
+        while (f != null) {
+            if (f!=null&&f.next!=null&&f.val!=f.next.val) {
+                f = f.next;
+                if(f!=null&&f.next!=null&&f.val!=f.next.val){
+                    s = s.next;
+                }
+                else{
+                    
+                }
+
+            } else {
+                while (f != null && s.val == f.val)
+                    f = f.next;
+                if (f == null)
+                    s.next = null;
+                else
+                    s.next = f;
+                if (f != null)
+                    f = f.next;
+                s = s.next;
+            }
+        }
+    }
+
+    public void removeAllDuplicates(Node sNode, Node dNode) {
+        while (dNode != null && dNode.val != dNode.next.val) {
+            dNode = dNode.next;
+        }
+        if (dNode == null) {
+            sNode.next = null;
+            return;
         }
     }
 }
@@ -66,9 +94,10 @@ public class Main {
     public static void main(String[] args) {
         ListNode list = new ListNode();
         list.insert(1);
+        list.insert(1);
         list.insert(2);
-        list.insert(2);
-        list.display();
+        list.insert(3);
+        list.insert(3);
         list.removeDuplicatedElements();
         list.display();
     }
