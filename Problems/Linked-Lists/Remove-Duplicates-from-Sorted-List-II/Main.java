@@ -1,3 +1,4 @@
+import java.util.*;
 
 class ListNode {
     Node head;
@@ -41,42 +42,14 @@ class ListNode {
         }
     }
 
-
     public void removeDuplicatedElements() {
         if (head == null || head.next == null)
             return;
 
-        if(head!=null&&head.next!=null&&head.val==head.next.val){
-            while(head!=null&&head.next!=null&&head.val==head.next.val){
-                head = head.next;
-            }
-            head = head.next;
-        }
+        Node s = head, f = head.next;
+        
+   
 
-        Node s = head, f = head;
-
-        while (f != null) {
-            if (f!=null&&f.next!=null&&f.val!=f.next.val) {
-                f = f.next;
-                if(f!=null&&f.next!=null&&f.val!=f.next.val){
-                    s = s.next;
-                }
-                else{
-                    
-                }
-
-            } else {
-                while (f != null && s.val == f.val)
-                    f = f.next;
-                if (f == null)
-                    s.next = null;
-                else
-                    s.next = f;
-                if (f != null)
-                    f = f.next;
-                s = s.next;
-            }
-        }
     }
 
     public void removeAllDuplicates(Node sNode, Node dNode) {
@@ -96,8 +69,11 @@ public class Main {
         list.insert(1);
         list.insert(1);
         list.insert(2);
+        list.insert(2);
         list.insert(3);
-        list.insert(3);
+        list.insert(4);
+        list.insert(4);
+        list.insert(5);
         list.removeDuplicatedElements();
         list.display();
     }
