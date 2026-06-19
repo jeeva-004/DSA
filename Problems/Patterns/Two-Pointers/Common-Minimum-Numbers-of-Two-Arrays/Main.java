@@ -1,21 +1,26 @@
+import java.util.*;
+
 class Main {
     static int commonMin(int[] arr1, int arr2[]) {
-        int i = 0, j = 0;
+        if(arr1.length==0||arr2.length==0)
+            return -1;
 
-        while (i < arr1.length && j < arr2.length) {
-            if (arr1[i] < arr2[j])
-                i++;
-            else if (arr2[j] < arr1[i])
-                j++;
-            else
-                return arr2[j];
-        }
+        HashSet<Integer> lookUpSet = new HashSet<>();
 
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        if(arr1[0]==arr2[0])
+            return arr1[0];
+        for(int n: arr2)
+            lookUpSet.add(n);
+        for(int i = 0; i<arr1.length; i++)
+            if(lookUpSet.contains(arr1[i]))
+                return arr1[i];
         return -1;
     }
 
     public static void main(String[] args) {
-        int[] arr1 = { -1, 2, 3, 4 }, arr2 = { 5, 6 };
+        int[] arr1 = {  2, 3,0, 4 }, arr2 = { 1,3,4,6,7,2,0};
         System.out.print(commonMin(arr1, arr2));
     }
 }
