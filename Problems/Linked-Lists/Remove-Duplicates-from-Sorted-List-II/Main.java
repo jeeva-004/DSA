@@ -42,25 +42,9 @@ class ListNode {
         }
     }
 
-    public void removeDuplicatedElements() {
-        if (head == null || head.next == null)
-            return;
+    
 
-        Node s = head, f = head.next;
-        
-   
 
-    }
-
-    public void removeAllDuplicates(Node sNode, Node dNode) {
-        while (dNode != null && dNode.val != dNode.next.val) {
-            dNode = dNode.next;
-        }
-        if (dNode == null) {
-            sNode.next = null;
-            return;
-        }
-    }
 }
 
 public class Main {
