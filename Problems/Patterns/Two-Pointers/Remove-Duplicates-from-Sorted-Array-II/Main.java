@@ -1,23 +1,27 @@
 import java.util.*;
 
 class Main {
-    static int removeDuplicates(int[] nums) {
-        int slow = 2, fast = 2;
-
+    static int[] removeDuplicates(int[] nums) {
+        int slow = 0, i = 0, fast = 1;
         while (fast < nums.length) {
-            if (nums[slow - 2] != nums[fast]) {
-                nums[slow] = nums[fast];
-                slow++;
+            if (nums[i] == nums[fast]) {
+                while (fast!=nums.length&&nums[i] == nums[fast])
+                    fast++;
+                i = fast;
+                fast++;
+            } else {
+                nums[slow++] = nums[i];
+                i = fast;
+                fast++;
+                if (fast == nums.length)
+                    nums[slow] = nums[i];
             }
-            fast++;
         }
-        return slow;
-
+        return nums;
     }
 
     public static void main(String[] args) {
-        int[] nums = { 0, 0, 1, 1, 1, 1, 2, 3, 3 };
-
-        System.out.println(removeDuplicates(nums));
+        int[] nums = { 1,2,3,4,4,5 };
+        System.out.println(Arrays.toString(removeDuplicates(nums)));
     }
 }

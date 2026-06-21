@@ -6,7 +6,6 @@ class Main {
         List<List<Integer>> triplets = new ArrayList<>();
         Arrays.sort(nums);
 
-
         for(int i = 0; i<nums.length-2; i++){
             int anchar = nums[i];
             if(i>0&&nums[i]==nums[i-1])

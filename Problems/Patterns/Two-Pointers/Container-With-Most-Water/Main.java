@@ -6,7 +6,6 @@ class Main{
 
         while(left!=right){
             int height = heights[left]<heights[right]?heights[left]:heights[right];
-            System.out.println(height);
             int width = right-left;
             int currentArea = height*width;
 
