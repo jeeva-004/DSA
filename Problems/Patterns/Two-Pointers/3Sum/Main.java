@@ -10,7 +10,7 @@ class Main {
             int anchar = nums[i];
             if(i>0&&nums[i]==nums[i-1])
                 continue;
-            int target = anchar - 0;
+            int target = 0 - anchar;
             int left = i+1, right = nums.length-1;
             while(left<right){
                 int currentSum = nums[left]+nums[right];

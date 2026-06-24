@@ -1,19 +1,30 @@
 class Main{
     
     static double maxAvg(int[] arr, int k){
-        
+
+        // set a variables to store values and positions
+
         int start = 0, windowSize = k;
-        double maxSum = 0;
+        double current = 0, maxSum = 0;
+
+        //accumulate current window sum
+
         for(int i = 0; i<windowSize; i++)
-            maxSum+=arr[i];
-        double currentSum = maxSum;
+            current+=arr[i];
+
+        //set initially the both current and maxsum variables same one
+
+        maxSum = current;
+
         while(windowSize<arr.length){
-            currentSum = currentSum-arr[start]+arr[windowSize];
-            maxSum = Math.max(currentSum, maxSum);
-            start++;
+            current = current-arr[start]+arr[windowSize];
+            maxSum = Math.max(current, maxSum);
             windowSize++;
+            start++;
         }
+
         return maxSum/k;
+
     }
     
     public static void main(String[] args){

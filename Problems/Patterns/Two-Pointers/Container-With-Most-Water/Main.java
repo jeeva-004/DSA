@@ -1,16 +1,17 @@
 class Main{
     
     static int maxArea(int[] heights){
+        //declare a needed variables to store positions and values
         
-        int left = 0, right = heights.length-1, maxArea = Integer.MIN_VALUE ;        
+        int right = heights.length-1, left = 0, maxArea = Integer.MIN_VALUE;
 
-        while(left!=right){
+        while(left<=right){
             int height = heights[left]<heights[right]?heights[left]:heights[right];
-            int width = right-left;
+            int width = right - left;
             int currentArea = height*width;
-
-            maxArea = Math.max(maxArea, currentArea);
-
+            maxArea = Math.max(currentArea, maxArea);
+            System.out.println(maxArea);
+            
             if(heights[left]<heights[right])
                 left++;
             else if(heights[left]>heights[right])
@@ -18,7 +19,6 @@ class Main{
             else
                 right--;
         }
-
         return maxArea;
     }
 
