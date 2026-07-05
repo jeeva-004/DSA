@@ -16,5 +16,7 @@ class Main{
 
     public static void main(String[] args){
         int[] arr = {-5,1,5,0,-7};
+
+        System.out.println(largestAltitude(arr));
     }
 }

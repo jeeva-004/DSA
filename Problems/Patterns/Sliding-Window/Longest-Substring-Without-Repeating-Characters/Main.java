@@ -24,8 +24,6 @@ public class Main{
                 left++;
             }
         }
-
-        System.out.println(set);
         return maxlength;
     }
     

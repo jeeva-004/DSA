@@ -39,8 +39,8 @@ class Main{
     }
     
     public static void main(String[] args){
-        String s = "AABABBA";
+        String s = "ABAB";
 
-        System.out.print(characterReplacement(s, 1));
+        System.out.print(characterReplacement(s, 2));
     }
 }
