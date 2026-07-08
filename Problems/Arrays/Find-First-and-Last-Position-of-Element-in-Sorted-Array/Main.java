@@ -2,27 +2,36 @@ import java.util.*;
 
 class Main {
     static int[] searchRange(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int i = 0;
-
-        for(int n: nums){
-            if(!map.containsKey(n))
-                map.put(n, i);
-            i++;
-        }
-        
-        if(!map.containsKey(target))
+      
+        if(nums.length==0)
             return new int[] {-1, -1};
 
         int[] indexs = new int[2];
-        indexs[0] = map.get(target);
-        i = map.get(target)+1;
-        indexs[1] = map.get(target);
-        while(i<nums.length){
-            if(nums[i]==target)
-                indexs[1] = i;
-            i++;
+        int left = 0, right = nums.length-1; 
+        while(left<right){
+        int mid = (left+right)/2;
+        if(nums[mid]<target)
+            left = mid+1;
+        else if(nums[mid]>target)
+            right = mid-1;
+        else{
+            int answer = mid;
+            left = 0;
+            right = mid;
+            //find first occurance
+            while(left<right){
+                
+            }
+
+            left = mid;
+            right = nums.length-1;
+            //find last occurance
+            while(left<right){
+
+            }
+
         }
+        }   
 
         return indexs;
     }
