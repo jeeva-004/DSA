@@ -1,6 +1,6 @@
 import java.util.*;
+
 public class Main{
-    
     static boolean isSubArray(int[] nums, int k){
         
         int prefixSum = 0;
@@ -22,11 +22,9 @@ public class Main{
                 remains.put(remainder, n);
         }
         
-        
-        return false;
+       return false;
     }
-    
-    
+        
     public static void main(String[] args) {
         int[] nums = {23, 6, 4, 5};
     
