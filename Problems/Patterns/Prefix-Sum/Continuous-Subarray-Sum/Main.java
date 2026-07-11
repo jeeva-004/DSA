@@ -26,8 +26,8 @@ public class Main{
     }
         
     public static void main(String[] args) {
-        int[] nums = {23, 6, 4, 5};
+        int[] nums = {1,-1, 0};
     
-        System.out.println(isSubArray(nums, 6));
+        System.out.println(isSubArray(nums, 1));
     }
 }
