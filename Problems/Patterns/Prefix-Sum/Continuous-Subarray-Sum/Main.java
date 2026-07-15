@@ -11,8 +11,6 @@ public class Main{
         for(int n = 0; n<nums.length; n++){
             prefixSum+=nums[n];
             int remainder = prefixSum % k;
-            
-            remainder = (remainder + k) % k;
 
             if(remains.containsKey(remainder)){
                 if(n - remains.get(remainder) > 1)
@@ -26,7 +24,7 @@ public class Main{
     }
         
     public static void main(String[] args) {
-        int[] nums = {1,-1, 0};
+        int[] nums = {0};
     
         System.out.println(isSubArray(nums, 1));
     }

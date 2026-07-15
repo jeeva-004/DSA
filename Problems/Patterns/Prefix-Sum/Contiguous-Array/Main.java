@@ -31,3 +31,4 @@ public class Main{
         System.out.print(contigousSubArrayLength(arr));
     }
 }
+
