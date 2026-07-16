@@ -54,6 +54,7 @@ class CircularSinglyLinkedList<T> {
                 System.out.print(temp.data + " ");
                 temp = temp.next;
             } while (temp != last.next);
+
         }
     }
 
@@ -194,7 +195,6 @@ public class Main {
         list.addAtEnd(1);
         list.addAtEnd(2);
         list.addAtEnd(3);
-        list.insertAtAfterElement(1, 4);
         // System.out.println(list.length());
         list.displayElements();
     }
