@@ -5,7 +5,7 @@ public class Main{
     static int fibMemoization(int n){
         int[] mem = new int[n+1];
         if(n<=1){
-            mem[n] = 1;
+            mem[n] = n==0?0:1;
             return mem[n];
         }
         
@@ -22,7 +22,7 @@ public class Main{
     static int fibTabulation(int n){
 
         int[] tabulation = new int[n+1];
-        tabulation[0] = 1;
+        tabulation[0] = 0;
         tabulation[1] = 1;
         
         if(n<=1)
@@ -33,9 +33,28 @@ public class Main{
         
         return tabulation[n];
     }
+
+    //bottom up DP (Constent Space Complexity)
+
+    static int fibLinearSpaceComplexity(int n){
+
+        if(n<=1)
+            return n==1?1:0;
+
+        int pre1 = 0;
+        int pre2 = 1;
+        
+        for(int i = 2; i<=n; i++){
+            int current = pre1 + pre2;
+            pre1 = pre2;
+            pre2 = current;
+        }
+
+        return pre2;
+    }
     
     public static void main(String[] args){
-        System.out.println(fibMemoization(5));
-        System.out.println(fibTabulation(5));
+        System.out.println(fibMemoization(4));
+        System.out.println(fibLinearSpaceComplexity(4));
     }
 }
