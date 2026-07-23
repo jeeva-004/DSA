@@ -1,7 +1,9 @@
 import java.util.*;
 
 class Solution {
-    public int countRangeSum(int[] nums, int lower, int upper) {
+    
+    static int countRangeSum(int[] nums, int lower, int upper) {
+        
         // 1. Create the Prefix Sum array using 'long' to prevent overflow
         long[] prefixSums = new long[nums.length + 1];
         for (int i = 0; i < nums.length; i++) {
@@ -12,7 +14,8 @@ class Solution {
         return mergeSortAndCount(prefixSums, 0, prefixSums.length - 1, lower, upper);
     }
 
-    private int mergeSortAndCount(long[] prefixSums, int start, int end, int lower, int upper) {
+    static int mergeSortAndCount(long[] prefixSums, int start, int end, int lower, int upper) {
+        
         // Base Case: If the section has 1 or 0 elements, no pairs can be formed
         if (start >= end) {
             return 0;
@@ -51,7 +54,7 @@ class Solution {
         return count;
     }
 
-    private void merge(long[] prefixSums, int start, int mid, int end) {
+    static void merge(long[] prefixSums, int start, int mid, int end) {
         long[] temp = new long[end - start + 1];
         int left = start;
         int right = mid + 1;
@@ -85,6 +88,6 @@ public class Main {
     public static void main(String[] args) {
         int[] nums = { 1, 2, 3 };
 
-        // System.out.println(rangeSum(nums, 1, 3));
+        System.out.println(Solution.countRangeSum(nums, 1, 3));
     }
 }
