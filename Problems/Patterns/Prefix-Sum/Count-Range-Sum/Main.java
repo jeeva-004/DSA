@@ -56,7 +56,7 @@ class Solution {
 
     static void merge(long[] prefixSums, int start, int mid, int end) {
         long[] temp = new long[end - start + 1];
-        int left = start;
+        int left = start;   
         int right = mid + 1;
         int k = 0;
 
@@ -86,8 +86,8 @@ class Solution {
 public class Main {
 
     public static void main(String[] args) {
-        int[] nums = { 1, 2, 3 };
+        int[] nums = { -3,1,2,-2,2,-1 };
 
-        System.out.println(Solution.countRangeSum(nums, 1, 3));
+        System.out.println(Solution.countRangeSum(nums, -3, -1));
     }
 }
