@@ -37,7 +37,7 @@ class Solution {
         for (int j = mid + 1; j <= end; j++) {
             // Move lowPointer until prefixSums[j] - prefixSums[lowPointer] <= upper
             while (lowPointer <= mid && prefixSums[j] - prefixSums[lowPointer] > upper) {
-                lowPointer++;
+                lowPointer++;   
             }
             // Move highPointer until prefixSums[j] - prefixSums[highPointer] < lower
             while (highPointer <= mid && prefixSums[j] - prefixSums[highPointer] >= lower) {
@@ -86,8 +86,8 @@ class Solution {
 public class Main {
 
     public static void main(String[] args) {
-        int[] nums = { -3,1,2,-2,2,-1 };
+        int[] nums = { 1, 2, 3 };
 
-        System.out.println(Solution.countRangeSum(nums, -3, -1));
+        System.out.println(Solution.countRangeSum(nums, 1, 3));
     }
 }
