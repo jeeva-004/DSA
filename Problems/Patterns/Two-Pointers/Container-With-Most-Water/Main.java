@@ -10,8 +10,7 @@ class Main{
             int width = right - left;
             int currentArea = height*width;
             maxArea = Math.max(currentArea, maxArea);
-            System.out.println(maxArea);
-            
+
             if(heights[left]<heights[right])
                 left++;
             else if(heights[left]>heights[right])

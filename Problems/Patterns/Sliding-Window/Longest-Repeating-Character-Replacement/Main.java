@@ -31,8 +31,8 @@ class Main{
             }
             else if(imposters<=k)
                 maxlength = Math.max(currentLength, maxlength);
-            right++;
 
+            right++;
         }
 
         return maxlength;

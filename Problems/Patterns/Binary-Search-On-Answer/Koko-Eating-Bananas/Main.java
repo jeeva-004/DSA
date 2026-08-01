@@ -3,6 +3,7 @@ import java.util.*;
 public class Main {
 
     static int minSpeed(int[] piles, int h) {
+        
         int minSpeed = Integer.MAX_VALUE;
         int max = 1;
         int min = 1;

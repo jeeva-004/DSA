@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class Main{
-    
     static int countSubArray(int[] nums, int k){
         int count = 0;
         int currentSum = 0;

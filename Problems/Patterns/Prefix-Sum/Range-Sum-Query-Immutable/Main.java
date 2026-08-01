@@ -7,8 +7,8 @@ class NumArray {
         for(int i = 1; i<arr.length; i++)
             arr[i] = arr[i]+arr[i-1];
     }
-    public int sumRange(int left, int right) {
 
+    public int sumRange(int left, int right) {
         return left==0?arr[right]:arr[right]-arr[left-1];
     }
 
