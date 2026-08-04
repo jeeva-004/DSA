@@ -1,8 +1,6 @@
 public class Main{
-    
     static int splitArray(int[] nums, int k){
         long low = Integer.MIN_VALUE, high = 0, mid = 0, minLargeElement = 0;
-
         for(int n: nums){
             low = low<n?n:low;
             high+=n;

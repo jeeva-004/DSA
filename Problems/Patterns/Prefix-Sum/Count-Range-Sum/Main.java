@@ -1,5 +1,4 @@
 import java.util.*;
-
 class Solution {
     
     static int countRangeSum(int[] nums, int lower, int upper) {
