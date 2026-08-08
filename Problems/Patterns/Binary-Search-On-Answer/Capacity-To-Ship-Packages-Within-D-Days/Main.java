@@ -2,10 +2,10 @@ public class Main {
 
     static int minCapacityToShipWeights(int[] weights, int days) {
 
-        int min = Integer.MAX_VALUE, max = 0, minCapacity = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE, max = 0, minCapacity = Integer.MAX_VALUE;
         int mid = 0;
         for (int n : weights) {
-            min = Math.min(min, n);
+            min = Math.max(min, n);
             max += n;
         }
 

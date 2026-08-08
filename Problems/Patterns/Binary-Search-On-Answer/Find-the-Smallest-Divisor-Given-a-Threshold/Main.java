@@ -6,12 +6,13 @@ public class Main{
         
         for(int n: nums)
             max = Math.max(n, max);
+        
+        int sum = 0;
+        boolean isValid = true;
 
         while(min<=max){
             mid = (min+max) / 2;
 
-            int sum = 0;
-            boolean isValid = true;
 
             for(int n: nums){
                 sum+= (n+mid-1) / mid;
@@ -21,13 +22,16 @@ public class Main{
                     break;
                 }
             }
-
+            
             if(isValid){
                 minDivisor = Math.min(minDivisor, mid);
                 max = mid-1;
             }
             else
                 min = mid+1;
+            
+            isValid = true;
+            sum = 0;
         }
 
         return minDivisor;

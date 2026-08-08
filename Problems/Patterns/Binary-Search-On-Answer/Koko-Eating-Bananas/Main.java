@@ -30,12 +30,11 @@ public class Main {
         long hours = 0;
 
         for(int n: piles){
-            if(n%mid==0)
-                hours+=n / mid;
-            else
-                hours+= (n / mid)+1;
+            hours+=(n+mid-1) / mid;
+        
+            if(hours>h)
+                return false;
         }
-
         return hours<=h;
     }
 

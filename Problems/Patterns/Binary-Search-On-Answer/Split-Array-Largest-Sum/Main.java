@@ -1,4 +1,5 @@
 public class Main{
+    
     static int splitArray(int[] nums, int k){
         long low = Integer.MIN_VALUE, high = 0, mid = 0, minLargeElement = 0;
         for(int n: nums){
@@ -8,7 +9,6 @@ public class Main{
 
         while(low<=high){
             mid = (low+high) / 2;
-
             if(canSplit(nums, mid, k)){
                 minLargeElement = mid;
                 high = mid-1;

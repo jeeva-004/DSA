@@ -29,6 +29,7 @@ public class Main{
     }
 
     public static void main(String[] args){
-
+        int[] nums1 = {4,1,2}, nums2 = {1,3,4,2};
+        System.out.print(Arrays.toString(nextGreatestElementList(nums1, nums2)));
     }
 }
