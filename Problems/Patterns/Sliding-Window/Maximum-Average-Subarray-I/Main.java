@@ -1,7 +1,5 @@
 class Main{
-    
     static double maxAvg(int[] arr, int k){
-
         // set a variables to store values and positions
 
         int start = 0, windowSize = k;

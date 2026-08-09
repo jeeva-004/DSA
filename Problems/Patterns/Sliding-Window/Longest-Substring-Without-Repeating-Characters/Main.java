@@ -2,9 +2,6 @@ import java.util.*;
 
 public class Main{
     static int lengthOfLongestSubstring(String s) {
-        if(s.length()==0)
-            return 0;
-
         //set a variables to trace and store positions, values
 
         int left = 0, right = 0, maxlength = 0;

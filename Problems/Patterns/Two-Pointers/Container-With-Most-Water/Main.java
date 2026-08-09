@@ -1,5 +1,4 @@
 class Main{
-    
     static int maxArea(int[] heights){
         //declare a needed variables to store positions and values
         
@@ -18,6 +17,7 @@ class Main{
             else
                 right--;
         }
+
         return maxArea;
     }
 
