@@ -9,12 +9,10 @@ public class Main{
         HashMap<Integer, Integer> pairs = new HashMap<>();
 
         for(int n: nums2){
-
             while(!stack.isEmpty() && stack.peek()<n){
                 pairs.put(stack.peek(), n);
                 stack.pop();
             }
-
             stack.push(n);
         }
 
