@@ -11,7 +11,7 @@ public class Main{
 
         for(i = 0; i<heights.length; i++)
             newHeights[i] = heights[i];
-        for(i = 0; i<newHeights.length; i++){
+        for(i = 0; i<newHeights.length; i++){   
             
             while(!dStack.isEmpty() && newHeights[i]<newHeights[dStack.peek()]){
                 popped = dStack.pop();
