@@ -30,7 +30,7 @@ class Main {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1,0,1,2    };
+        int[] arr = { 1,0,1,2};
         System.out.println(longestConsecutiveSequence(arr));
     }
 }
