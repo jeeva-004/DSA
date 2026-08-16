@@ -3,7 +3,6 @@ import java.util.*;
 public class Main {
 
     static int removeOverLapingIntervals(int[][] intervals){
-        
         Arrays.sort(intervals, (a, b)->Integer.compare(a[1], b[1]));
         int removableIntervals = 0, pre = intervals[0][1], current = 0;
     

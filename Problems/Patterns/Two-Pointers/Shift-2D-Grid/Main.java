@@ -9,6 +9,7 @@ public class Main {
         for (int i = 0; i < grid.length; i++)
             for (int j = 0; j < grid[i].length; j++)
                 li.add(grid[i][j]);
+            
         k = k % (grid.length * grid[0].length);
 
         int[] primitiveArray = li.stream()

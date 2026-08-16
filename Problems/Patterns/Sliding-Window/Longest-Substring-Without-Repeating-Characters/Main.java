@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Main{
     static int lengthOfLongestSubstring(String s) {
         //set a variables to trace and store positions, values

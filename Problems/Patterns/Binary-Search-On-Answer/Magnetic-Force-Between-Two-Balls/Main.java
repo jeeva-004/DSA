@@ -14,7 +14,6 @@ public class Main {
             }
             else
                 max = mid - 1;
-
         }
 
         return maxDistance;

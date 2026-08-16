@@ -18,7 +18,6 @@ public class Main{
                 prePrefixSums.put(currentSum, i);
         }
 
-
         return maxLength;
     }
 

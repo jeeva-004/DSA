@@ -1,9 +1,6 @@
 public class Main {
-
     static boolean lemanadeChange(int[] bills) {
-
         int fives = 0, tens = 0;
-
         for (int n : bills) {
             if (n == 5)
                 fives++;
@@ -25,7 +22,6 @@ public class Main {
                 }
             }
         }
-
         return true;
     }
 

@@ -31,6 +31,7 @@ class Main {
         while (rabit != null && rabit.next != null) {
             rabit = rabit.next.next;
             totoys = totoys.next;
+            
             if (rabit == totoys) {
                 totoys = head;
                 while (totoys != rabit) {

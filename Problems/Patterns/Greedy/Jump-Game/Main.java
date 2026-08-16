@@ -1,15 +1,10 @@
 public class Main{
-    
     static boolean canJump(int[] nums){
-
         if(nums.length<=1)
-            return true;
-        
+            return true;        
         if(nums.length>1 && nums[0]==0)
             return false;
-
         int maximumJumps = 0, i = 0, current = 0;
-
         while(i<nums.length){
             if(i>maximumJumps)
                 return false;
@@ -19,10 +14,8 @@ public class Main{
 
             if(maximumJumps>=nums.length-1)
                 return true;
-
             i++;
         }
-
         return true;
     }
 
