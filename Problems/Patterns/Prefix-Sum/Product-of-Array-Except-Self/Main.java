@@ -16,7 +16,6 @@ public class Main{
             prefixProduct[i] = prefixProduct[i] * suffixProduct;
             suffixProduct = arr[i]*suffixProduct;
         }
-
         return prefixProduct;
     }
 
