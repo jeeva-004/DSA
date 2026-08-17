@@ -1,32 +1,32 @@
-class HashSet<K>{
+class HashSet<K> {
     static private int capacity = 16;
     Node<K>[] buckets;
     int size;
 
-    class Node<K>{
+    class Node<K> {
         K key;
         Node next;
 
-        Node(K k){
+        Node(K k) {
             key = k;
             next = null;
         }
     }
 
-    HashSet(){
-        buckets =  new Node[capacity];
+    HashSet() {
+        buckets = new Node[capacity];
     }
 
-    private int getHash(K key){
+    private int getHash(K key) {
         return Math.abs(key.hashCode()) % capacity;
     }
 
-    public void add(K key){
+    public void add(K key) {
         int index = getHash(key);
         Node head = buckets[index];
 
-        while(head!=null){
-            if(head.key==key)
+        while (head != null) {
+            if (head.key == key)
                 return;
             head = head.next;
         }
@@ -34,23 +34,23 @@ class HashSet<K>{
         Node<K> n = new Node(key);
         n.next = buckets[index];
         buckets[index] = n;
-        size++;         
+        size++;
     }
 
-    public void remove(K key){
+    public void remove(K key) {
         int index = getHash(key);
-        
+
         Node head = buckets[index];
-        if(head!=null && head.key==key){
+        if (head != null && head.key == key) {
             buckets[index] = head.next;
             size--;
             return;
         }
 
         Node pre = null;
-        while(head!=null){
-            if(head.key==key){
-                if(pre==null)
+        while (head != null) {
+            if (head.key == key) {
+                if (pre == null)
                     buckets[index] = head.next;
                 else
                     pre.next = head.next;
@@ -64,16 +64,16 @@ class HashSet<K>{
 
     }
 
-    public boolean contains(K key){
+    public boolean contains(K key) {
         int index = getHash(key);
         Node head = buckets[index];
 
-        if(head!=null && head.key==key)
+        if (head != null && head.key == key)
             return true;
 
-        while(head!=null){
-            
-            if(head.key==key)
+        while (head != null) {
+
+            if (head.key == key)
                 return true;
 
             head = head.next;
@@ -82,13 +82,13 @@ class HashSet<K>{
         return false;
     }
 
-    public void print(){
-        for(int i = 0; i<buckets.length; i++){
-            System.out.print(i+": ");
+    public void print() {
+        for (int i = 0; i < buckets.length; i++) {
+            System.out.print(i + ": ");
             Node current = buckets[i];
-            
-            while(current!=null){
-                System.out.print("("+current.key+")"+"->");
+
+            while (current != null) {
+                System.out.print("(" + current.key + ")" + "->");
                 current = current.next;
             }
 
@@ -98,8 +98,8 @@ class HashSet<K>{
     }
 }
 
-public class Main{
-    public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
         HashSet<Integer> set = new HashSet<>();
 
         set.add(1);
