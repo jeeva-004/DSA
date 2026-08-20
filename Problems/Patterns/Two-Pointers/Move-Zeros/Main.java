@@ -7,9 +7,11 @@ class Main {
         for (int i : arr)
             if (i != 0)
                 tempArr[j++] = i;
+            
         for (int n = 0; n < arr.length; n++) {
             arr[n] = tempArr[n];
         }
+
         return arr;
     }
 
