@@ -3,6 +3,7 @@ class Main {
     static char nextGreatestLetter(char[] letters, char target) {
         if (target == letters[letters.length - 1] || target > letters[letters.length - 1] || target == 'z')
             return letters[0];
+        
         int s = 0, e = letters.length - 1;
         char greatestCharacter = ' ';
 

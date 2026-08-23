@@ -47,7 +47,7 @@ public class Main{
     }
         
     public static void main(String[] args){
-        String s = "ADOBECODEBANC", t = "A";
+        String s = "ADOBECODEBANC", t = "ABC";
 
         System.out.println(minWindow(s, t));
     }

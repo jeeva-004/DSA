@@ -8,20 +8,18 @@ public class Main{
 
         for(i = 0; i<heights.length; i++)
             newHeights[i] = heights[i];
+
         for(i = 0; i<newHeights.length; i++){   
-            
             while(!dStack.isEmpty() && newHeights[i]<newHeights[dStack.peek()]){
                 popped = dStack.pop();
                 left = dStack.isEmpty()?-1:dStack.peek();
                 width = i - left - 1;
                 maxArea = maxArea<newHeights[popped] * width ? newHeights[popped] * width:maxArea;
-                
             }
             dStack.push(i);
         }    
         return maxArea;
     }
-
 
     public static void main(String[] args){
         int[] heights = {2,1,5,6,2,3};

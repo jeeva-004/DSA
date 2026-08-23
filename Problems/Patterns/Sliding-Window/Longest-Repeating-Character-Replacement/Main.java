@@ -6,6 +6,7 @@ class Main{
     static int characterReplacement(String s, int k){
         if(s.isEmpty())
             return 0;
+        
         int left = 0, right = 0, maxlength = Integer.MIN_VALUE;
         
         HashMap<Character, Integer> map = new HashMap<>();

@@ -1,8 +1,6 @@
 import java.util.*;
 import java.util.HashMap;
-
 public class Main {
-
     static int binarySubArrays(int[] nums, int goal) {
         int runningSum = 0, subArrays = 0, target = 0;
         HashMap<Integer, Integer> freq = new HashMap<>();

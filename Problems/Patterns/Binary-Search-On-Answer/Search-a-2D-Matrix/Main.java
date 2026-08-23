@@ -1,6 +1,4 @@
-
 class Main {
-
     static boolean isHere(int[][] matrix, int target) {
 
         int s = 0, col = matrix[0].length, e = (matrix.length*col)-1;

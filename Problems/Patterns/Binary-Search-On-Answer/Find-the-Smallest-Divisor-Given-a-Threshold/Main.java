@@ -13,7 +13,6 @@ public class Main{
         while(min<=max){
             mid = (min+max) / 2;
 
-
             for(int n: nums){
                 sum+= (n+mid-1) / mid;
 

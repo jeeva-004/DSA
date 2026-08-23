@@ -2,10 +2,8 @@ import java.util.*;
 import java.util.HashMap;
 
 public class Main {
-
     static int maxSeatAllocationForFamily(int n, int[][] reservedSeats) {
         int maxSeatsForFamily = 0;
-
         HashMap<Integer, List<Integer>> lookUpMap = new HashMap<>();
 
         for (int i = 0; i < reservedSeats.length; i++) {

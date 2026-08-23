@@ -1,8 +1,5 @@
 import java.util.*;
-import java.util.HashMap;;
-
 public class Main {
-
     //using HashMap
     static int leastInterval(char[] tasks, int gap) {
         int maxOccur = 0, maxEqualOccur = 0;
@@ -24,7 +21,6 @@ public class Main {
         return leastIntervals < tasks.length ? tasks.length : leastIntervals;
     }
 
-
     //using premitive array
     static int minInterval(char[] tasks, int gap){
         int maxOccur = 0, maxEqualOccur = 0;
@@ -37,11 +33,9 @@ public class Main {
             maxOccur = maxOccur<freq[tasks[task]-'A']?freq[tasks[task]-'A']:maxOccur;
         }
 
-
         for(int i = 0; i<freq.length; i++)
             if(freq[i]==maxOccur)
                 maxEqualOccur++;
-
     
         int minInterval = (maxOccur - 1) * (gap+1) + maxEqualOccur;
 

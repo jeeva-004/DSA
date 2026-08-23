@@ -23,7 +23,6 @@ public class Main{
                 left = Integer.MAX_VALUE;
                 needToCover = 0;
             }
-
             i++;
         }
 
