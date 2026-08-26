@@ -3,34 +3,44 @@ import java.util.Arrays;
 public class Main{
     
     static int threeSumClosest(int[] nums, int target){
-        int left = 0, right = 0, currentSum = 0, closest = nums[0]+nums[1]+nums[2];
         Arrays.sort(nums);
-        for(int i = 0; i<nums.length-2; i++){
-            if(i>0 && nums[i]==nums[i-1])
-                continue;
-            
-            left = i+1;
-            right = nums.length-1;
 
-            while(left<right){
-                currentSum = nums[i] + nums[left] + nums[right];
-                closest = Math.abs(target - closest)<Math.abs(target-currentSum)?closest:currentSum;
+        long closest = (long) nums[0] + nums[1] + nums[2];
 
-                if(currentSum<target)
+        for (int i = 0; i < nums.length - 2; i++) {
+
+            int left = i + 1;
+            int right = nums.length - 1;
+
+            while (left < right) {
+                long currentSum = (long) nums[i] + nums[left] + nums[right];
+
+                long currentDiff = Math.abs((long) target - currentSum);
+                long closestDiff = Math.abs((long) target - closest);
+
+                if (currentDiff < closestDiff ||
+                    (currentDiff == closestDiff && currentSum > closest)) {
+                    closest = currentSum;
+                }
+
+                if (currentSum < target) {
                     left++;
-                else if(currentSum>target)
+                } 
+                else if (currentSum > target) {
                     right--;
-                else
-                    return currentSum;
+                } 
+                else {
+                    return (int) currentSum;
+                }
             }
         }
 
-        return closest;
+        return (int) closest;
     }
 
     public static void main(String[] args){
-        int[] nums = {0,0,0};
-        int target = 1;
+        int[] nums = {5,2,7,5};
+        int target = 13;
 
         System.out.print(threeSumClosest(nums, target));
     }
