@@ -1,5 +1,6 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
+
 public class Main{
     static int findMaxArea(int[] heights){
         int maxArea = 0, left = 0, width = 0, popped = 0, i = 0;
@@ -16,6 +17,7 @@ public class Main{
                 width = i - left - 1;
                 maxArea = maxArea<newHeights[popped] * width ? newHeights[popped] * width:maxArea;
             }
+            
             dStack.push(i);
         }    
         return maxArea;
