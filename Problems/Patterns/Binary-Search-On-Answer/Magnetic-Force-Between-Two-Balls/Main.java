@@ -39,7 +39,7 @@ public class Main {
             }
         }
 
-        return placedBalls==balls;
+        return false;
     }
 
     public static void main(String[] args){

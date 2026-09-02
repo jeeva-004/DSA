@@ -17,7 +17,6 @@ public class Main {
     }
 
     static boolean canArrive(int[] dist, int mid, double hours) {
-
         double calculatedHours = 0.0;
 
         for (int i = 0; i < dist.length - 1; i++) {

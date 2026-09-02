@@ -3,6 +3,7 @@ class Main {
     static int numRescueBoats(int[] people, int limit) {
         if (people.length == 0)
             return 0;
+            
         Arrays.sort(people);
         int boats = 0;
         int left = 0, right = people.length - 1;

@@ -34,7 +34,7 @@ public class Main{
                 c = s.charAt(start);
                 strS.put(c, strS.get(c)-1);
 
-                if(strT.containsKey(c)&&strT.get(c)>strS.get(c))
+                if(strT.containsKey(c)&&!strT.get(c).equals(strS.get(c)))
                     formedUnique--;
 
                 start++;

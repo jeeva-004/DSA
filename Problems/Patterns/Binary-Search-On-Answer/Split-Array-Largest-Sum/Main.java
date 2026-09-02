@@ -9,6 +9,7 @@ public class Main{
 
         while(low<=high){
             mid = (low+high) / 2;
+            
             if(canSplit(nums, mid, k)){
                 minLargeElement = mid;
                 high = mid-1;

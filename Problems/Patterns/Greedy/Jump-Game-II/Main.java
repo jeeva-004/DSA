@@ -13,6 +13,7 @@ public class Main{
                 currentEnd = farthest;
                 jumps++;
             }
+            
             i++;
         }
 

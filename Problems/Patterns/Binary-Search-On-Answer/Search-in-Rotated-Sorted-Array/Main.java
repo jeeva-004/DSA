@@ -6,7 +6,6 @@ public class Main{
         int start = 0, end = nums.length-1, mid = 0;
 
         while(start<=end){
-
             mid = (start+end)/2;
             
             if(nums[mid]==target)
@@ -26,7 +25,6 @@ public class Main{
                 else
                     end = mid-1;
             }
-
         }
         
         return -1;

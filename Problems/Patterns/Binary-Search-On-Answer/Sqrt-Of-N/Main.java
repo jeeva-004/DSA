@@ -5,7 +5,7 @@ class Main{
         int s = 1, e = n;
 
         while(s<=n){
-            int mid = s+(e-s)/2;
+            int mid = (s+e)/2;
 
             if(mid<n/mid)
                 s = mid+1;
@@ -14,12 +14,10 @@ class Main{
             else
                 return mid;
         }
+        
         return e;
     }
     public static void main(String[] args){
-        System.out.println(SqrtOfN(4));
+        System.out.println(SqrtOfN(16));
     }
 }
-
-
-//timezone modified

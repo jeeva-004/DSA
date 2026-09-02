@@ -33,7 +33,7 @@ public class Main {
                 lastIndex = i;
             }
         }
-        return cowsPlaced == cows;
+        return false;
     }
 
     public static void main(String[] args) {
