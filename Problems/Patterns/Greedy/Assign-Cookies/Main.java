@@ -12,7 +12,7 @@ public class Main {
         int childPointer = 0, cookiePointer = 0;
 
         while (childPointer < childs.length && cookiePointer < cookies.length) {
-            if (cookies[cookiePointer] >= childs[cookiePointer]) {
+            if (cookies[cookiePointer] >= childs[childPointer]) {
                 childPointer++;
                 cookiePointer++;
             } else
