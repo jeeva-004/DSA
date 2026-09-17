@@ -10,7 +10,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String n = "32";
+        String n = "392";
         System.out.print(minPartitions(n));
     }
 }

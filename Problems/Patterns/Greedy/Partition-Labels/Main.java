@@ -8,6 +8,7 @@ public class Main{
         
         int i = 0, needToCover = 0, left = Integer.MAX_VALUE; 
         char c;
+        
         for(i = 0; i<s.length(); i++)
             lookUpMap.put(s.charAt(i), i);
         

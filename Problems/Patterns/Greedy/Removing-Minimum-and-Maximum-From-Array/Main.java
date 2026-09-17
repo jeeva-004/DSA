@@ -19,7 +19,8 @@ public class Main{
                 max = nums[i];
             }
         }
- int minimumNoOfDeletions = Integer.MAX_VALUE;
+        
+        int minimumNoOfDeletions = Integer.MAX_VALUE;
 
         int option1 = Math.max(minIndex, maxIndex) + 1;
 
