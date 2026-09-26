@@ -32,11 +32,13 @@ public class Main {
 
             if(count==k){
                 bouquets++;
+                if(bouquets==m)
+                    return true;
                 count = 0;
             }
         }
 
-        return bouquets>=m;
+        return false;
     }
 
     public static void main(String[] args) {

@@ -8,8 +8,7 @@ public class Main {
 
         for (int n : nums2) {
             while (!stack.isEmpty() && stack.peek() < n) {
-                pairs.put(stack.peek(), n);
-                stack.pop();
+                pairs.put(stack.pop(), n);
             }
             stack.push(n);
         }

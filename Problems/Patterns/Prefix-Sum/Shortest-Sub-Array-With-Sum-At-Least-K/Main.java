@@ -16,9 +16,8 @@ public class Main{
         for(int j = 0; j<prefixSum.length; j++){
             while(!iStack.isEmpty() && prefixSum[j] - prefixSum[iStack.peekFirst()]>=k){
                 shortSubArr = shortSubArr>j-iStack.getFirst()?j-iStack.getFirst():shortSubArr;
-                iStack.removeFirst(); 
+                iStack.pop(); 
             }   
-
 
             while(!iStack.isEmpty() && prefixSum[j]<=prefixSum[iStack.peekLast()]){
                 iStack.removeLast();

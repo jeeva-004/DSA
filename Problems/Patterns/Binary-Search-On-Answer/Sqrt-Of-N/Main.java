@@ -2,6 +2,7 @@ class Main{
     static int SqrtOfN(int n){
         if(n<=2)
             return n;
+
         int s = 1, e = n;
 
         while(s<=n){
@@ -17,7 +18,9 @@ class Main{
         
         return e;
     }
+
     public static void main(String[] args){
         System.out.println(SqrtOfN(16));
     }
+
 }

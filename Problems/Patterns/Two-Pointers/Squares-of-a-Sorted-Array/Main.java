@@ -5,8 +5,9 @@ class Main {
 
         for (int i = 0; i < arr.length; i++)
             arr[i] = Math.abs(arr[i] * arr[i]);
-        boolean isSwaped = false;
+
         for (int i = 0; i < arr.length; i++) {
+            boolean isSwaped = false;
             for (int j = 0; j < arr.length - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];

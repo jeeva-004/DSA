@@ -35,7 +35,8 @@ public class Main {
             if(hours>h)
                 return false;
         }
-        return hours<=h;
+        
+        return true;
     }
 
     public static void main(String[] args) {

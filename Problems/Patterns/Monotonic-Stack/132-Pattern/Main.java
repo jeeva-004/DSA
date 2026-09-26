@@ -1,9 +1,7 @@
 import java.util.*;
 
 public class Main{
-    
     //132 patter exist or not 
-
     static boolean patternExist(int[] nums){
         if(nums.length<3)
             return false;

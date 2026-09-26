@@ -1,6 +1,6 @@
 class Main{
     
-        static String firstPalindrome(String[] words) {
+    static String firstPalindrome(String[] words) {
         int start = 0;
         while(start<words.length){
             int s = 0, e = words[start].length()-1;

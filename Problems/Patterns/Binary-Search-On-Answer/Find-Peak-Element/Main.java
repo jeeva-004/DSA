@@ -4,9 +4,6 @@ public class Main{
         int start = 0, end = nums.length-1, mid = 0;
 
         while(start<end){
-            if(start==end)
-                return start;
-
             mid = (start+end)/2;
 
             if(nums[mid]>nums[mid+1])

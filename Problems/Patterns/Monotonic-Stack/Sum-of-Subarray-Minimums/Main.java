@@ -28,6 +28,7 @@ public class Main{
             
             dStack.push(i);
         }
+        
         int lChoices = 0, rChoices = 0;
         for(i = 0; i<arr.length; i++){
             lChoices = i - leftChoices[i];

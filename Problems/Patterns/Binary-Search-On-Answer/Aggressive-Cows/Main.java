@@ -12,20 +12,14 @@ public class Main {
             } else
                 max = mid - 1;
         }
+
         return (int) maximizedMinDistance;
     }
 
     static boolean isPossible(int[] stalls, long mid, int cows) {
-        long cowsPlaced = 0;
+        long cowsPlaced = 1;
         int lastIndex = 0;
-        for (int i = 0; i < stalls.length; i++) {
-            if (i == 0) {
-                cowsPlaced++;
-                lastIndex = i;
-                if (cowsPlaced == cows)
-                    return true;
-                continue;
-            }
+        for (int i = 1; i < stalls.length; i++) {
             if (stalls[i] - stalls[lastIndex] >= mid) {
                 cowsPlaced++;
                 if (cowsPlaced == cows)

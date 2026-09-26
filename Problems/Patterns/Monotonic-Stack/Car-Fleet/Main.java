@@ -28,7 +28,7 @@ public class Main{
     }
 
     public static void main(String[] args){
-        int[] positions = {10,8,0,5,3}, speeds = {2, 4, 1, 1,3};
+        int[] positions = {10,8,0,5,3}, speeds = {2, 4, 1, 1, 3};
         int target = 12;
 
         System.out.print(carFleets(target, positions, speeds));

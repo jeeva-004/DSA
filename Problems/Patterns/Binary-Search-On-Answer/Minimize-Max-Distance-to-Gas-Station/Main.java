@@ -16,7 +16,6 @@ public class Main{
             }
             else
                 min = mid;
-        
         }
 
         return minMaxDistance;
@@ -37,7 +36,7 @@ public class Main{
                 return false;
         }
 
-        return totalStations<=k;
+        return true;
     }
 
 

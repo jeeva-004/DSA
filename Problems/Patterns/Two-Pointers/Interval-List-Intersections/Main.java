@@ -6,16 +6,17 @@ public class Main{
         if(firstList.length==0 || secondList.length==0)
             return new int[][] {};
 
-        List<List<Integer>> intersections = new ArrayList<>();
+        List<int[]> intersections = new ArrayList<>();
 
         int i = 0, j = 0;
         
         while(i<firstList.length && j<secondList.length){
             int min = Math.max(firstList[i][0], secondList[j][0]);
             int max = Math.min(firstList[i][1], secondList[j][1]);
-
+            
             if(min<=max){
-                intersections.add(Arrays.asList(min, max));
+                int[] intersection = {min, max};
+                intersections.add(intersection);
             }
             
             if(firstList[i][1]<secondList[j][1])
@@ -27,8 +28,7 @@ public class Main{
         int[][] result = new int[intersections.size()][2];
 
         for(i = 0; i<result.length; i++){
-            result[i][0] = intersections.get(i).get(0);
-            result[i][1] = intersections.get(i).get(1);
+            result[i] = intersections.get(i);
         }
 
         return result;

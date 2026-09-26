@@ -10,6 +10,8 @@ public class Main{
             prefixProduct[i] = prefixProduct[i-1] * arr[i-1];
         }
 
+        // System.out.print(Arrays.toString(prefixProduct));
+
         int suffixProduct = 1;
 
         for(int i = prefixProduct.length-1; i>=0; i--){

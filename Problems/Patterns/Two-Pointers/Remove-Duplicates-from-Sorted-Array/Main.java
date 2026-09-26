@@ -11,6 +11,7 @@ class Main {
                 fast++;
             }
         }
+        
         return slow+1;
     }
 

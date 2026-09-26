@@ -20,21 +20,15 @@ public class Main {
     }
 
     static boolean canPlace(int[] positions, int mid, int balls){
-        int placedBalls = 0, lastIndex = 0;
+        int placedBalls = 1, lastIndex = 0;
 
         for(int i = 0; i<positions.length; i++){
-            if(i==0){
-                placedBalls++;
-                if(placedBalls==balls)
-                    return true;
-                lastIndex = i;
-                continue;
-            }
-
             if(positions[i]-positions[lastIndex]>=mid){
                 placedBalls++;
+
                 if(placedBalls==balls)
                     return true;
+             
                 lastIndex = i;
             }
         }

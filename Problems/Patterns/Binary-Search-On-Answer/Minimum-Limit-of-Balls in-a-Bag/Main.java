@@ -31,7 +31,7 @@ public class Main{
                 return false;
         }
 
-        return totalOperations<=maxOperations;
+        return true;
     }
 
     public static void main(String[] args){

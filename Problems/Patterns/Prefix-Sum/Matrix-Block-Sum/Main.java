@@ -1,7 +1,7 @@
 import java.util.*;
 public class Main{
     
-    static void matrixBlockSum(int[][] matrix, int k){
+    static int[][] matrixBlockSum(int[][] matrix, int k){
         int row = matrix.length, col = matrix[0].length;
         int[][] prefixSum = new int[row][col];
         int top = 0, left = 0, sum = 0, i = 0, j = 0;
@@ -53,8 +53,9 @@ public class Main{
             }
         }
 
-        // for(int[] arr: result)
-        //     System.out.print(Arrays.toString(arr) +" ");
+         for(int[] arr: result)
+            System.out.print(Arrays.toString(arr) +" ");
+
 
         return result;
 
