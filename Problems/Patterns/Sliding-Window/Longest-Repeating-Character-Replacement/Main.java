@@ -30,7 +30,7 @@ class Main{
 
                 left++;
             }
-            else if(imposters<=k)
+            else
                 maxlength = Math.max(currentLength, maxlength);
 
             right++;

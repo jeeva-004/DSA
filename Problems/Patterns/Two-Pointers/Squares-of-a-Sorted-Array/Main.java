@@ -16,9 +16,11 @@ class Main {
                     isSwaped = true;
                 }
             }
+            
             if (!isSwaped)
                 break;
         }
+
         return arr;
     }
 

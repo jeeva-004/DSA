@@ -43,7 +43,7 @@ public class Main{
             traveller++;
         }
         
-        return minStart==Integer.MAX_VALUE?"":s.substring(minStart, minStart+minLength);
+        return minLength==Integer.MAX_VALUE?"":s.substring(minStart, minStart+minLength);
     }
         
     public static void main(String[] args){

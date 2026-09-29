@@ -1,6 +1,7 @@
 public class Main{
     
     static int trapRainWaters(int[] height){
+        
         int left = 0, right = height.length-1, leftMax = height[left], rightMax = height[right], waterTraps = 0;
 
         while(left<right){

@@ -15,6 +15,7 @@ public class Main{
                 currentSubArray-=nums[left];
                 left++;
             }
+            
             maxUniqueSubArray = maxUniqueSubArray<currentSubArray?currentSubArray:maxUniqueSubArray;
 
             right++;

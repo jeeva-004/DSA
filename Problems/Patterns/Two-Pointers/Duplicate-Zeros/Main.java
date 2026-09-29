@@ -15,6 +15,7 @@ class Main {
                     len -= 1;
                     break;
                 }
+                
                 zeros++;
             }
         }

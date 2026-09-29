@@ -15,7 +15,6 @@ class Main {
                 left++;
             else
                 right--;
-        
         }
 
         return maxArea;

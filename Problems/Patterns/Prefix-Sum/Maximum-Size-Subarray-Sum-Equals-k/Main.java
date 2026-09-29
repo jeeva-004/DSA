@@ -15,6 +15,7 @@ public class Main {
                 maxSubArrayLength = i - lookUpMap.get(target) > maxSubArrayLength ? i - lookUpMap.get(target)
                         : maxSubArrayLength;
             }
+            
             if (!lookUpMap.containsKey(runningSum))
                 lookUpMap.put(runningSum, i);
         }
