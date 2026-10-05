@@ -93,6 +93,7 @@ public class Main{
         q.insert(4);
         // q.insert(3);
 
+        p.inOrder(p.root);
 
         System.out.print(Tree.isSameTree(p.root, q.root));
 

@@ -45,6 +45,7 @@ class Tree{
     public int maxDepth(Node r){
         if(r==null)
             return 0;
+            
         int left  = maxDepthHelper(r.left);
         int right  = maxDepthHelper(r.right);
         

@@ -45,6 +45,7 @@ class Tree{
     public boolean hasPathSum(int targetSum){
         if(root==null)
             return false;
+            
         return hasSum(root, targetSum);        
     }
 
