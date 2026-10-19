@@ -20,7 +20,6 @@ public class Main {
             
             subArrays += right - left + 1;
             right++;
-        
         }
 
         return subArrays;

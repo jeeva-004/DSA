@@ -30,10 +30,12 @@ class Tree{
         if(r==null)
             return new Node(val);
         
-        if(r.val<val)
+        if (r.val < val)
+            r.right = insert(r.right, val);
+        else if (r.val > val)
             r.left = insert(r.left, val);
         else
-            r.right = insert(r.right, val);
+            return r;
 
         return r;
     }
@@ -66,7 +68,6 @@ class Tree{
         return 1 + Math.max(right, left);
     }
 }
-
 
 public class Main{
     public static void main(String[] args){

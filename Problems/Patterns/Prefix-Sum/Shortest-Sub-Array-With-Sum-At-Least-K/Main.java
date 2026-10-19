@@ -1,9 +1,6 @@
 import java.util.*;
-
 public class Main{
-    
     static int shortestSubArray(int[] nums, int k){
-
         int[] prefixSum = new int[nums.length+1];
 
         for(int i=0; i<nums.length; i++){
@@ -18,11 +15,9 @@ public class Main{
                 shortSubArr = shortSubArr>j-iStack.getFirst()?j-iStack.getFirst():shortSubArr;
                 iStack.pop(); 
             }   
-
             while(!iStack.isEmpty() && prefixSum[j]<=prefixSum[iStack.peekLast()]){
                 iStack.removeLast();
             }
-
             iStack.addLast(j); 
         }
 

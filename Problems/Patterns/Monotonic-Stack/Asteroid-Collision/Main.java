@@ -17,7 +17,6 @@ public class Main {
                     dStack.pop();
                 else if (dStack.isEmpty() && dStack.peek() < 0)
                     dStack.push(asteroid);
-
             }
         }
         int[] ans = new int[dStack.size()];
