@@ -1,14 +1,11 @@
 import java.util.*;
-
 public class Main{
     
     static boolean isNStraightHands(int[] hands, int groupSize){
-
         if(hands.length % groupSize !=0)
             return false;
 
         Arrays.sort(hands);
-        
         HashMap<Integer, Integer> freq = new HashMap<>();
 
         for(int hand: hands){
@@ -16,7 +13,6 @@ public class Main{
         }
 
         int startIndex = 0;
-
         while(!freq.isEmpty()){
             int size = 1;
             int start = hands[startIndex];
@@ -38,15 +34,11 @@ public class Main{
                 else
                     return false;
             }
-
             
             //find starting position
-
             while(!freq.isEmpty() && !freq.containsKey(hands[startIndex]))
                 startIndex++;
-       
         }
-
         return true;
     }
 

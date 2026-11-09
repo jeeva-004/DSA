@@ -14,13 +14,12 @@ public class Main{
         int minCandy = candies[candies.length-1];
         
         for(i = ratings.length-2; i>=0; i--){
-            
             if(ratings[i]>ratings[i+1])
                 candies[i] = candies[i+1]+1>candies[i]?candies[i+1]+1:candies[i];
 
             minCandy+=candies[i];
         }
-
+        
         return minCandy;
     }
 
